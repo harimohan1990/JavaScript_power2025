@@ -1,2 +1,2 @@
-# JavaScript_power 
+# JavaScript
 A complete JavaScript Course
