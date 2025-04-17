@@ -1360,5 +1360,1317 @@ for (const key in obj) {
 console.log(count);
 // Output: 3
 ```
+ ### array methods along with examples for each. 
+
+### 1. `push()`
+Adds one or more elements to the end of an array and returns the new length of the array.
+
+```javascript
+let fruits = ['apple', 'banana'];
+fruits.push('orange');
+console.log(fruits); // Output: ['apple', 'banana', 'orange']
+```
+
+### 2. `pop()`
+Removes the last element from an array and returns that element.
+
+```javascript
+let fruits = ['apple', 'banana', 'orange'];
+let lastFruit = fruits.pop();
+console.log(lastFruit); // Output: 'orange'
+console.log(fruits); // Output: ['apple', 'banana']
+```
+
+### 3. `shift()`
+Removes the first element from an array and returns that element.
+
+```javascript
+let fruits = ['apple', 'banana', 'orange'];
+let firstFruit = fruits.shift();
+console.log(firstFruit); // Output: 'apple'
+console.log(fruits); // Output: ['banana', 'orange']
+```
+
+### 4. `unshift()`
+Adds one or more elements to the beginning of an array and returns the new length of the array.
+
+```javascript
+let fruits = ['banana', 'orange'];
+fruits.unshift('apple');
+console.log(fruits); // Output: ['apple', 'banana', 'orange']
+```
+
+### 5. `splice()`
+Changes the contents of an array by removing or replacing existing elements and/or adding new elements.
+
+```javascript
+let fruits = ['apple', 'banana', 'orange'];
+fruits.splice(1, 1, 'kiwi'); // Remove 1 element at index 1 and add 'kiwi'
+console.log(fruits); // Output: ['apple', 'kiwi', 'orange']
+```
+
+### 6. `slice()`
+Returns a shallow copy of a portion of an array into a new array object.
+
+```javascript
+let fruits = ['apple', 'banana', 'orange', 'kiwi'];
+let citrus = fruits.slice(1, 3); // From index 1 to 3 (not including 3)
+console.log(citrus); // Output: ['banana', 'orange']
+```
+
+### 7. `forEach()`
+Executes a provided function once for each array element.
+
+```javascript
+let fruits = ['apple', 'banana', 'orange'];
+fruits.forEach(fruit => {
+    console.log(fruit);
+});
+// Output:
+// apple
+// banana
+// orange
+```
+
+### 8. `map()`
+Creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+```javascript
+let numbers = [1, 2, 3];
+let doubled = numbers.map(num => num * 2);
+console.log(doubled); // Output: [2, 4, 6]
+```
+
+### 9. `filter()`
+Creates a new array with all elements that pass the test implemented by the provided function.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let evens = numbers.filter(num => num % 2 === 0);
+console.log(evens); // Output: [2, 4]
+```
+
+### 10. `reduce()`
+Executes a reducer function on each element of the array, resulting in a single output value.
+
+```javascript
+let numbers = [1, 2, 3, 4];
+let sum = numbers.reduce((accumulator, current) => accumulator + current, 0);
+console.log(sum); // Output: 10
+```
+
+### 11. `every()`
+Tests whether all elements in the array pass the test implemented by the provided function.
+
+```javascript
+let numbers = [1, 2, 3, 4];
+let allPositive = numbers.every(num => num > 0);
+console.log(allPositive); // Output: true
+```
+
+### 12. `some()`
+Tests whether at least one element in the array passes the test implemented by the provided function.
+
+```javascript
+let numbers = [1, -2, 3, 4];
+let hasNegative = numbers.some(num => num < 0);
+console.log(hasNegative); // Output: true
+```
+
+### 13. `find()`
+Returns the value of the first element in the provided array that satisfies the provided testing function.
+
+```javascript
+let numbers = [5, 12, 8, 130, 44];
+let found = numbers.find(num => num > 10);
+console.log(found); // Output: 12
+```
+
+### 14. `findIndex()`
+Returns the index of the first element in the array that satisfies the provided testing function.
+
+```javascript
+let numbers = [5, 12, 8, 130, 44];
+let index = numbers.findIndex(num => num > 10);
+console.log(index); // Output: 1
+```
+
+### 15. `includes()`
+Determines whether an array includes a certain value among its entries.
+
+```javascript
+let fruits = ['apple', 'banana', 'orange'];
+let hasBanana = fruits.includes('banana');
+console.log(hasBanana); // Output: true
+```
+
+### 16. `sort()`
+Sorts the elements of an array in place and returns the sorted array.
+
+```javascript
+let numbers = [4, 2, 5, 1, 3];
+numbers.sort();
+console.log(numbers); // Output: [1, 2, 3, 4, 5]
+```
+
+### 17. `reverse()`
+Reverses the elements of an array in place.
+
+```javascript
+let numbers = [1, 2, 3];
+numbers.reverse();
+console.log(numbers); // Output: [3, 2, 1]
+```
+
+### 18. `join()`
+Joins all elements of an array into a string.
+
+```javascript
+let fruits = ['apple', 'banana', 'orange'];
+let fruitString = fruits.join(', ');
+console.log(fruitString); // Output: 'apple, banana, orange'
+```
+
+### 19. `concat()`
+Used to merge two or more arrays.
+
+```javascript
+let fruits1 = ['apple', 'banana'];
+let fruits2 = ['orange', 'kiwi'];
+let allFruits = fruits1.concat(fruits2);
+console.log(allFruits); // Output: ['apple', 'banana', 'orange', 'kiwi']
+```
+
+### 20. `flat()`
+Creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+```javascript
+let nestedArray = [1, 2, [3, 4, [5, 6]]];
+let flatArray = nestedArray.flat(2);
+console.log(flatArray); // Output: [1, 2, 3, 4, 5, 6]
+```
+
+### 21. `flatMap()`
+Maps each element using a mapping function, then flattens the result into a new array.
+
+```javascript
+let arr = [1, 2, 3];
+let flattened = arr.flatMap(x => [x, x * 2]);
+console.log(flattened); // Output: [1, 2, 2, 4, 3, 6]
+```
+
+### 22. `from()`
+Creates a new, shallow-copied Array instance from an array-like or iterable object.
+
+```javascript
+let str = 'hello';
+let chars = Array.from(str);
+console.log(chars); // Output: ['h', 'e', 'l', 'l', 'o']
+```
+
+### 23. `isArray()`
+Determines whether the passed value is an Array.
+
+```javascript
+console.log(Array.isArray([1, 2, 3])); // Output: true
+console.log(Array.isArray('hello')); // Output: false
+```
+
+### 24. `fill()`
+Fills all the elements of an array from a start index to an end index with a static value.
+
+```javascript
+let arr = new Array(3).fill(5);
+console.log(arr); // Output: [5, 5, 5]
+```
+
+### 25. `copyWithin()`
+Shallow copies part of an array to another location in the same array and returns it.
+
+```javascript
+let arr = [1, 2, 3, 4, 5];
+arr.copyWithin(0, 3);
+console.log(arr); // Output: [4, 5, 3, 4, 5]
+```
+
+### 26. `keys()`
+Returns a new Array Iterator object that contains the keys for each index in the array.
+
+```javascript
+let arr = ['a', 'b', 'c'];
+let keys = arr.keys();
+for (let key of keys) {
+    console.log(key); // Output: 0, 1, 2
+}
+```
+
+### 27. `values()`
+Returns a new Array Iterator object that contains the values for each index in the array.
+
+```javascript
+let arr = ['a', 'b', 'c'];
+let values = arr.values();
+for (let value of values) {
+    console.log(value); // Output: 'a', 'b', 'c'
+}
+```
+
+### 28. `entries()`
+Returns a new Array Iterator object that contains the key/value pairs for each index in the array.
+
+```javascript
+let arr = ['a', 'b', 'c'];
+let entries = arr.entries();
+for (let entry of entries) {
+    console.log(entry); // Output: [0, 'a'], [1, 'b'], [2, 'c']
+}
+```
+
+
+ ### JavaScript string methods along with examples for each:
+
+### 1. `charAt()`
+Returns the character at a specified index.
+
+```javascript
+let str = "Hello";
+console.log(str.charAt(1)); // Output: 'e'
+```
+
+### 2. `charCodeAt()`
+Returns the Unicode of the character at a specified index.
+
+```javascript
+let str = "Hello";
+console.log(str.charCodeAt(1)); // Output: 101 (Unicode for 'e')
+```
+
+### 3. `concat()`
+Joins two or more strings and returns a new string.
+
+```javascript
+let str1 = "Hello";
+let str2 = "World";
+let result = str1.concat(" ", str2);
+console.log(result); // Output: 'Hello World'
+```
+
+### 4. `includes()`
+Determines whether a string contains the characters of a specified string.
+
+```javascript
+let str = "Hello World";
+console.log(str.includes("World")); // Output: true
+```
+
+### 5. `indexOf()`
+Returns the index of the first occurrence of a specified value in a string.
+
+```javascript
+let str = "Hello World";
+console.log(str.indexOf("o")); // Output: 4
+```
+
+### 6. `lastIndexOf()`
+Returns the index of the last occurrence of a specified value in a string.
+
+```javascript
+let str = "Hello World";
+console.log(str.lastIndexOf("o")); // Output: 7
+```
+
+### 7. `slice()`
+Extracts a section of a string and returns it as a new string.
+
+```javascript
+let str = "Hello World";
+console.log(str.slice(0, 5)); // Output: 'Hello'
+```
+
+### 8. `substring()`
+Returns a subset of a string between two indices.
+
+```javascript
+let str = "Hello World";
+console.log(str.substring(0, 5)); // Output: 'Hello'
+```
+
+### 9. `toLowerCase()`
+Returns the calling string value converted to lowercase.
+
+```javascript
+let str = "Hello World";
+console.log(str.toLowerCase()); // Output: 'hello world'
+```
+
+### 10. `toUpperCase()`
+Returns the calling string value converted to uppercase.
+
+```javascript
+let str = "Hello World";
+console.log(str.toUpperCase()); // Output: 'HELLO WORLD'
+```
+
+### 11. `trim()`
+Removes whitespace from both ends of a string.
+
+```javascript
+let str = "   Hello World   ";
+console.log(str.trim()); // Output: 'Hello World'
+```
+
+### 12. `split()`
+Splits a string into an array of substrings.
+
+```javascript
+let str = "Hello World";
+let arr = str.split(" ");
+console.log(arr); // Output: ['Hello', 'World']
+```
+
+### 13. `replace()`
+Returns a new string with some or all matches of a pattern replaced by a replacement.
+
+```javascript
+let str = "Hello World";
+let newStr = str.replace("World", "JavaScript");
+console.log(newStr); // Output: 'Hello JavaScript'
+```
+
+### 14. `search()`
+Executes a search for a match between a regular expression and this String object.
+
+```javascript
+let str = "Hello World";
+let index = str.search("World");
+console.log(index); // Output: 6
+```
+
+### 15. `match()`
+Retrieves the matches when matching a string against a regular expression.
+
+```javascript
+let str = "Hello World";
+let matches = str.match(/o/g);
+console.log(matches); // Output: ['o', 'o']
+```
+
+### 16. `repeat()`
+Constructs and returns a new string which contains the specified number of copies of the string on which it was called.
+
+```javascript
+let str = "Hello ";
+let repeated = str.repeat(3);
+console.log(repeated); // Output: 'Hello Hello Hello '
+```
+
+### 17. `startsWith()`
+Determines whether a string begins with the characters of a specified string.
+
+```javascript
+let str = "Hello World";
+console.log(str.startsWith("Hello")); // Output: true
+```
+
+### 18. `endsWith()`
+Determines whether a string ends with the characters of a specified string.
+
+```javascript
+let str = "Hello World";
+console.log(str.endsWith("World")); // Output: true
+```
+
+### 19. `valueOf()`
+Returns the primitive value of a String object.
+
+```javascript
+let str = new String("Hello World");
+console.log(str.valueOf()); // Output: 'Hello World'
+```
+
+### 20. `codePointAt()`
+Returns a non-negative integer that is the Unicode code point value of the character at the given index.
+
+```javascript
+let str = "Hello";
+console.log(str.codePointAt(0)); // Output: 72 (Unicode for 'H')
+```
+
+### 21. `localeCompare()`
+Compares two strings in the current locale.
+
+```javascript
+let str1 = "apple";
+let str2 = "banana";
+console.log(str1.localeCompare(str2)); // Output: -1 (because 'apple' comes before 'banana')
+```
+
+### 22. `fromCharCode()`
+Static method that returns a string created by using the specified sequence of Unicode values.
+
+```javascript
+console.log(String.fromCharCode(72, 101, 108, 108, 111)); // Output: 'Hello'
+```
+
+### object methods along with examples for each
+
+### 1. `Object.keys()`
+Returns an array of a given object's own enumerable property names.
+
+```javascript
+const obj = { name: "Alice", age: 25 };
+const keys = Object.keys(obj);
+console.log(keys); // Output: ['name', 'age']
+```
+
+### 2. `Object.values()`
+Returns an array of a given object's own enumerable property values.
+
+```javascript
+const obj = { name: "Alice", age: 25 };
+const values = Object.values(obj);
+console.log(values); // Output: ['Alice', 25]
+```
+
+### 3. `Object.entries()`
+Returns an array of a given object's own enumerable string-keyed property [key, value] pairs.
+
+```javascript
+const obj = { name: "Alice", age: 25 };
+const entries = Object.entries(obj);
+console.log(entries); // Output: [['name', 'Alice'], ['age', 25]]
+```
+
+### 4. `Object.assign()`
+Copies the values of all enumerable own properties from one or more source objects to a target object.
+
+```javascript
+const target = { a: 1 };
+const source = { b: 2, c: 3 };
+const returnedTarget = Object.assign(target, source);
+console.log(target); // Output: { a: 1, b: 2, c: 3 }
+console.log(returnedTarget); // Output: { a: 1, b: 2, c: 3 }
+```
+
+### 5. `Object.freeze()`
+Freezes an object, preventing new properties from being added to it and marking all existing properties as read-only.
+
+```javascript
+const obj = { name: "Alice" };
+Object.freeze(obj);
+obj.name = "Bob"; // This will not change the name
+console.log(obj.name); // Output: 'Alice'
+```
+
+### 6. `Object.seal()`
+Seals an object, preventing new properties from being added and marking all existing properties as non-configurable.
+
+```javascript
+const obj = { name: "Alice" };
+Object.seal(obj);
+obj.name = "Bob"; // This will change the name
+obj.age = 25; // This will not add a new property
+console.log(obj); // Output: { name: 'Bob' }
+```
+
+### 7. `Object.assign()` (for shallow copy)
+Creates a shallow copy of an object.
+
+```javascript
+const original = { name: "Alice" };
+const copy = Object.assign({}, original);
+console.log(copy); // Output: { name: 'Alice' }
+```
+
+### 8. `Object.create()`
+Creates a new object with the specified prototype object and properties.
+
+```javascript
+const proto = { greet() { return "Hello"; } };
+const obj = Object.create(proto);
+console.log(obj.greet()); // Output: 'Hello'
+```
+
+### 9. `Object.defineProperty()`
+Adds a property to an object or modifies an existing property, and returns the object.
+
+```javascript
+const obj = {};
+Object.defineProperty(obj, 'name', {
+    value: 'Alice',
+    writable: false // The property is not writable
+});
+console.log(obj.name); // Output: 'Alice'
+obj.name = 'Bob'; // This will not change the name
+console.log(obj.name); // Output: 'Alice'
+```
+
+### 10. `Object.defineProperties()`
+Adds or modifies multiple properties of an object.
+
+```javascript
+const obj = {};
+Object.defineProperties(obj, {
+    name: {
+        value: 'Alice',
+        writable: false
+    },
+    age: {
+        value: 25,
+        writable: true
+    }
+});
+console.log(obj); // Output: { name: 'Alice', age: 25 }
+```
+
+### 11. `Object.getOwnPropertyDescriptor()`
+Returns a property descriptor for an own property (not inherited) of an object.
+
+```javascript
+const obj = { name: 'Alice' };
+const descriptor = Object.getOwnPropertyDescriptor(obj, 'name');
+console.log(descriptor); // Output: { value: 'Alice', writable: true, enumerable: true, configurable: true }
+```
+
+### 12. `Object.getOwnPropertyDescriptors()`
+Returns all own property descriptors of a given object.
+
+```javascript
+const obj = { name: 'Alice' };
+const descriptors = Object.getOwnPropertyDescriptors(obj);
+console.log(descriptors);
+// Output: { name: { value: 'Alice', writable: true, enumerable: true, configurable: true } }
+```
+
+### 13. `Object.getPrototypeOf()`
+Returns the prototype of the specified object.
+
+```javascript
+const obj = {};
+const proto = Object.getPrototypeOf(obj);
+console.log(proto === Object.prototype); // Output: true
+```
+
+### 14. `Object.setPrototypeOf()`
+Sets the prototype of a specified object to another object or null.
+
+```javascript
+const proto = { greet() { return "Hello"; } };
+const obj = {};
+Object.setPrototypeOf(obj, proto);
+console.log(obj.greet()); // Output: 'Hello'
+```
+
+### 15. `Object.is()`
+Determines whether two values are the same value.
+
+```javascript
+console.log(Object.is('foo', 'foo')); // Output: true
+console.log(Object.is({}, {})); // Output: false
+```
+
+### 16. `Object.values()`
+Returns an array of a given object's own enumerable property values.
+
+```javascript
+const obj = { name: "Alice", age: 25 };
+console.log(Object.values(obj)); // Output: ['Alice', 25]
+```
+
+### 17. `Object.entries()`
+Returns an array of a given object's own enumerable string-keyed property [key, value] pairs.
+
+```javascript
+const obj = { name: "Alice", age: 25 };
+console.log(Object.entries(obj)); // Output: [['name', 'Alice'], ['age', 25]]
+```
+
+### 18. `Object.keys()`
+Returns an array of a given object's own enumerable property names.
+
+```javascript
+const obj = { name: "Alice", age: 25 };
+console.log(Object.keys(obj)); // Output: ['name', 'age']
+```
+
+### 19. `Object.prototype.toString()`
+Returns a string representation of the object.
+
+```javascript
+const obj = {};
+console.log(Object.prototype.toString.call(obj)); // Output: '[object Object]'
+```
+
+### 20. `Object.prototype.hasOwnProperty()`
+Returns a boolean indicating whether the object has the specified property as its own property.
+
+```javascript
+const obj = { name: "Alice" };
+console.log(obj.hasOwnProperty('name')); // Output: true
+console.log(obj.hasOwnProperty('age')); // Output: false
+```
+
+ ### methods and properties associated with functions
+
+### 1. `Function.prototype.call()`
+Calls a function with a given `this` value and arguments provided individually.
+
+```javascript
+function greet() {
+    return `Hello, ${this.name}`;
+}
+
+const person = { name: "Alice" };
+console.log(greet.call(person)); // Output: 'Hello, Alice'
+```
+
+### 2. `Function.prototype.apply()`
+Calls a function with a given `this` value and arguments provided as an array (or an array-like object).
+
+```javascript
+function greet(greeting) {
+    return `${greeting}, ${this.name}`;
+}
+
+const person = { name: "Alice" };
+console.log(greet.apply(person, ["Hi"])); // Output: 'Hi, Alice'
+```
+
+### 3. `Function.prototype.bind()`
+Creates a new function that, when called, has its `this` keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+
+```javascript
+function greet() {
+    return `Hello, ${this.name}`;
+}
+
+const person = { name: "Alice" };
+const greetAlice = greet.bind(person);
+console.log(greetAlice()); // Output: 'Hello, Alice'
+```
+
+### 4. `Function.prototype.toString()`
+Returns a string representing the source code of the function.
+
+```javascript
+function greet() {
+    return "Hello!";
+}
+
+console.log(greet.toString()); // Output: 'function greet() {\n    return "Hello!";\n}'
+```
+
+### 5. `Function.prototype.length`
+Represents the number of parameters expected by the function.
+
+```javascript
+function add(a, b) {
+    return a + b;
+}
+
+console.log(add.length); // Output: 2
+```
+
+### 6. `Function.prototype.name`
+Returns the name of the function.
+
+```javascript
+function greet() {}
+console.log(greet.name); // Output: 'greet'
+```
+
+### 7. `Function.prototype.prototype`
+Allows you to add properties and methods to a function's prototype, which can then be accessed by instances created from that function (when used as a constructor).
+
+```javascript
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function() {
+    return `Hello, ${this.name}`;
+};
+
+const alice = new Person("Alice");
+console.log(alice.greet()); // Output: 'Hello, Alice'
+```
+
+### 8. `Function.prototype.hasOwnProperty()`
+Checks if the function has a specific property as its own property.
+
+```javascript
+function greet() {}
+greet.customProperty = "I'm a custom property";
+
+console.log(greet.hasOwnProperty("customProperty")); // Output: true
+console.log(greet.hasOwnProperty("name")); // Output: false
+```
+
+### 9. `Function.prototype.isGenerator()`
+Checks if a function is a generator function (not a standard method, but can be defined).
+
+```javascript
+function* generatorFunction() {
+    yield 1;
+}
+
+console.log(generatorFunction.prototype.constructor === generatorFunction); // Output: true
+```
+
+### 10. `Function.prototype.call()` with a delay (using `setTimeout`)
+Demonstrates how to use `call` with `setTimeout`.
+
+```javascript
+function greet() {
+    console.log(`Hello, ${this.name}`);
+}
+
+const person = { name: "Alice" };
+setTimeout(greet.call.bind(greet, person), 1000); // Output after 1 second: 'Hello, Alice'
+```
+
+### 11. `setTimeout()` and `setInterval()`
+These are global functions that can be used to execute a function after a specified delay or repeatedly at specified intervals.
+
+```javascript
+function sayHello() {
+    console.log("Hello!");
+}
+
+// Executes sayHello once after 2 seconds
+setTimeout(sayHello, 2000); // Output after 2 seconds: 'Hello!'
+
+// Executes sayHello every 1 second
+const intervalId = setInterval(sayHello, 1000);
+
+// To stop the interval after 5 seconds
+setTimeout(() => clearInterval(intervalId), 5000); // Stops after 5 seconds
+```
+
+### 12. `Function.prototype.bind()` with partial application
+You can use `bind` to create a partially applied function.
+
+```javascript
+function multiply(a, b) {
+    return a * b;
+}
+
+const double = multiply.bind(null, 2);
+console.log(double(5)); // Output: 10
+```
+
+### 13. `Function.prototype.then()` (for Promise functions)
+This method is used with promises to handle asynchronous operations.
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Done!"), 1000);
+});
+
+promise.then(result => {
+    console.log(result); // Output after 1 second: 'Done!'
+});
+```
+
+### 14. `Function.prototype.catch()` (for Promise functions)
+This method is used to handle errors in promises.
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => reject("Error!"), 1000);
+});
+
+promise.catch(error => {
+    console.log(error); // Output after 1 second: 'Error!'
+});
+```
+
+### 15. `Function.prototype.finally()` (for Promise functions)
+This method is used to execute code after a promise is settled, regardless of its outcome.
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Done!"), 1000);
+});
+
+promise
+    .then(result => console.log(result)) // Output after 1 second: 'Done!'
+    .finally(() => console.log("Promise settled.")); // Output: 'Promise settled.'
+```
+
+### JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate. It is primarily used to transmit data between a server and a web application as text.
+
+### JSON Structure
+
+1. **Objects**: An unordered collection of key/value pairs enclosed in curly braces `{}`.
+   - Example: 
+     ```json
+     {
+         "name": "Alice",
+         "age": 25,
+         "isStudent": false
+     }
+     ```
+
+2. **Arrays**: An ordered collection of values enclosed in square brackets `[]`.
+   - Example:
+     ```json
+     [
+         "apple",
+         "banana",
+         "orange"
+     ]
+     ```
+
+3. **Values**: Can be strings, numbers, objects, arrays, booleans, or null.
+   - Example:
+     ```json
+     {
+         "string": "Hello",
+         "number": 123,
+         "boolean": true,
+         "nullValue": null,
+         "array": [1, 2, 3],
+         "object": { "key": "value" }
+     }
+     ```
+
+### JSON Example
+
+Here is a more complex example of a JSON object representing a person:
+
+```json
+{
+    "name": "Alice",
+    "age": 25,
+    "isStudent": false,
+    "hobbies": ["reading", "traveling", "swimming"],
+    "address": {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA"
+    }
+}
+```
+
+### JSON Methods in JavaScript
+
+JavaScript provides two built-in methods for working with JSON:
+
+1. **`JSON.stringify()`**: Converts a JavaScript object or value to a JSON string.
+
+   ```javascript
+   const person = {
+       name: "Alice",
+       age: 25,
+       isStudent: false
+   };
+
+   const jsonString = JSON.stringify(person);
+   console.log(jsonString); // Output: '{"name":"Alice","age":25,"isStudent":false}'
+   ```
+
+2. **`JSON.parse()`**: Converts a JSON string to a JavaScript object.
+
+   ```javascript
+   const jsonString = '{"name":"Alice","age":25,"isStudent":false}';
+   const person = JSON.parse(jsonString);
+   console.log(person); // Output: { name: 'Alice', age: 25, isStudent: false }
+   ```
+
+### Use Cases for JSON
+
+- **Data Transmission**: JSON is commonly used to transmit data between a server and a web application.
+- **APIs**: Many web APIs return data in JSON format.
+- **Configuration Files**: JSON is often used for configuration files due to its readability.
+
+### Advantages of JSON
+
+- **Lightweight**: JSON is less verbose compared to XML, making it more efficient for data transmission.
+- **Human-Readable**: JSON format is easy to read and understand.
+- **Language Independence**: JSON is language-agnostic and can be used across different programming languages.
+
+### Common JSON Errors
+
+- **Invalid Syntax**: Missing commas, braces, or brackets can lead to parsing errors.
+- **Data Types**: Keys must be strings (enclosed in double quotes), and values must be valid JSON data types.
+
+ ### `Math` methods along with examples for each
+
+### 1. `Math.abs()`
+Returns the absolute value of a number.
+
+```javascript
+console.log(Math.abs(-5)); // Output: 5
+console.log(Math.abs(5));  // Output: 5
+```
+
+### 2. `Math.ceil()`
+Rounds a number up to the nearest integer.
+
+```javascript
+console.log(Math.ceil(4.2)); // Output: 5
+console.log(Math.ceil(-4.2)); // Output: -4
+```
+
+### 3. `Math.floor()`
+Rounds a number down to the nearest integer.
+
+```javascript
+console.log(Math.floor(4.7)); // Output: 4
+console.log(Math.floor(-4.7)); // Output: -5
+```
+
+### 4. `Math.round()`
+Rounds a number to the nearest integer.
+
+```javascript
+console.log(Math.round(4.5)); // Output: 5
+console.log(Math.round(4.4)); // Output: 4
+```
+
+### 5. `Math.max()`
+Returns the largest of the given numbers.
+
+```javascript
+console.log(Math.max(1, 2, 3, 4)); // Output: 4
+console.log(Math.max(-1, -2, -3)); // Output: -1
+```
+
+### 6. `Math.min()`
+Returns the smallest of the given numbers.
+
+```javascript
+console.log(Math.min(1, 2, 3, 4)); // Output: 1
+console.log(Math.min(-1, -2, -3)); // Output: -3
+```
+
+### 7. `Math.pow()`
+Returns the base raised to the exponent power.
+
+```javascript
+console.log(Math.pow(2, 3)); // Output: 8 (2^3)
+console.log(Math.pow(5, 2)); // Output: 25 (5^2)
+```
+
+### 8. `Math.sqrt()`
+Returns the square root of a number.
+
+```javascript
+console.log(Math.sqrt(16)); // Output: 4
+console.log(Math.sqrt(25)); // Output: 5
+```
+
+### 9. `Math.random()`
+Returns a pseudo-random number between 0 (inclusive) and 1 (exclusive).
+
+```javascript
+console.log(Math.random()); // Output: A random number between 0 and 1
+```
+
+### 10. `Math.sin()`
+Returns the sine of a number (angle in radians).
+
+```javascript
+console.log(Math.sin(Math.PI / 2)); // Output: 1
+```
+
+### 11. `Math.cos()`
+Returns the cosine of a number (angle in radians).
+
+```javascript
+console.log(Math.cos(0)); // Output: 1
+```
+
+### 12. `Math.tan()`
+Returns the tangent of a number (angle in radians).
+
+```javascript
+console.log(Math.tan(Math.PI / 4)); // Output: 1
+```
+
+### 13. `Math.log()`
+Returns the natural logarithm (base e) of a number.
+
+```javascript
+console.log(Math.log(Math.E)); // Output: 1
+```
+
+### 14. `Math.exp()`
+Returns e raised to the power of a given number.
+
+```javascript
+console.log(Math.exp(1)); // Output: 2.718281828459045 (approximately e)
+```
+
+### 15. `Math.floor()`
+Rounds a number down to the nearest integer.
+
+```javascript
+console.log(Math.floor(5.7)); // Output: 5
+```
+
+### 16. `Math.PI`
+A constant representing the value of π (pi).
+
+```javascript
+console.log(Math.PI); // Output: 3.141592653589793
+```
+
+### 17. `Math.E`
+A constant representing Euler's number (approximately 2.718).
+
+```javascript
+console.log(Math.E); // Output: 2.718281828459045
+```
+
+### 18. `Math.abs()`
+Returns the absolute value of a number.
+
+```javascript
+console.log(Math.abs(-10)); // Output: 10
+```
+
+### 19. `Math.trunc()`
+Returns the integer part of a number by removing any fractional digits.
+
+```javascript
+console.log(Math.trunc(4.9)); // Output: 4
+console.log(Math.trunc(-4.9)); // Output: -4
+```
+
+### 20. `Math.sign()`
+Returns the sign of a number, indicating whether the number is positive, negative, or zero.
+
+```javascript
+console.log(Math.sign(-5)); // Output: -1
+console.log(Math.sign(0));  // Output: 0
+console.log(Math.sign(5));  // Output: 1
+```
+
+### `Date` methods along with examples for each 
+
+### Creating a Date Object
+
+1. **`new Date()`**
+   Creates a new date object with the current date and time.
+
+   ```javascript
+   const now = new Date();
+   console.log(now); // Output: Current date and time
+   ```
+
+2. **`new Date(dateString)`**
+   Creates a new date object from a date string.
+
+   ```javascript
+   const dateFromString = new Date("2023-04-17");
+   console.log(dateFromString); // Output: Mon Apr 17 2023 00:00:00 GMT...
+   ```
+
+3. **`new Date(year, month, day, hours, minutes, seconds, milliseconds)`**
+   Creates a new date object with specified parameters.
+
+   ```javascript
+   const specificDate = new Date(2023, 3, 17); // Month is 0-indexed (0 = January)
+   console.log(specificDate); // Output: Mon Apr 17 2023 00:00:00 GMT...
+   ```
+
+### Getting Date Components
+
+1. **`getFullYear()`**
+   Returns the year of the specified date.
+
+   ```javascript
+   const date = new Date("2023-04-17");
+   console.log(date.getFullYear()); // Output: 2023
+   ```
+
+2. **`getMonth()`**
+   Returns the month (0-11) of the specified date.
+
+   ```javascript
+   const date = new Date("2023-04-17");
+   console.log(date.getMonth()); // Output: 3 (April)
+   ```
+
+3. **`getDate()`**
+   Returns the day of the month (1-31) for the specified date.
+
+   ```javascript
+   const date = new Date("2023-04-17");
+   console.log(date.getDate()); // Output: 17
+   ```
+
+4. **`getDay()`**
+   Returns the day of the week (0-6) for the specified date.
+
+   ```javascript
+   const date = new Date("2023-04-17");
+   console.log(date.getDay()); // Output: 1 (Monday)
+   ```
+
+5. **`getHours()`**
+   Returns the hour (0-23) of the specified date.
+
+   ```javascript
+   const date = new Date("2023-04-17T15:30:00");
+   console.log(date.getHours()); // Output: 15
+   ```
+
+6. **`getMinutes()`**
+   Returns the minutes (0-59) of the specified date.
+
+   ```javascript
+   const date = new Date("2023-04-17T15:30:00");
+   console.log(date.getMinutes()); // Output: 30
+   ```
+
+7. **`getSeconds()`**
+   Returns the seconds (0-59) of the specified date.
+
+   ```javascript
+   const date = new Date("2023-04-17T15:30:45");
+   console.log(date.getSeconds()); // Output: 45
+   ```
+
+8. **`getMilliseconds()`**
+   Returns the milliseconds (0-999) of the specified date.
+
+   ```javascript
+   const date = new Date("2023-04-17T15:30:45.123");
+   console.log(date.getMilliseconds()); // Output: 123
+   ```
+
+### Setting Date Components
+
+1. **`setFullYear(year, month, day)`**
+   Sets the year of a date object.
+
+   ```javascript
+   const date = new Date("2023-04-17");
+   date.setFullYear(2025);
+   console.log(date); // Output: Mon Apr 17 2025 ...
+   ```
+
+2. **`setMonth(month, day)`**
+   Sets the month of a date object.
+
+   ```javascript
+   const date = new Date("2023-04-17");
+   date.setMonth(11); // December
+   console.log(date); // Output: Fri Dec 17 2023 ...
+   ```
+
+3. **`setDate(day)`**
+   Sets the day of the month for a date object.
+
+   ```javascript
+   const date = new Date("2023-04-17");
+   date.setDate(25);
+   console.log(date); // Output: Mon Apr 25 2023 ...
+   ```
+
+4. **`setHours(hours, minutes, seconds, milliseconds)`**
+   Sets the hours for a date object.
+
+   ```javascript
+   const date = new Date("2023-04-17T15:30:00");
+   date.setHours(10);
+   console.log(date); // Output: Mon Apr 17 2023 10:30:00 ...
+   ```
+
+5. **`setMinutes(minutes, seconds, milliseconds)`**
+   Sets the minutes for a date object.
+
+   ```javascript
+   const date = new Date("2023-04-17T15:30:00");
+   date.setMinutes(45);
+   console.log(date); // Output: Mon Apr 17 2023 15:45:00 ...
+   ```
+
+6. **`setSeconds(seconds, milliseconds)`**
+   Sets the seconds for a date object.
+
+   ```javascript
+   const date = new Date("2023-04-17T15:30:00");
+   date.setSeconds(15);
+   console.log(date); // Output: Mon Apr 17 2023 15:30:15 ...
+   ```
+
+7. **`setMilliseconds(milliseconds)`**
+   Sets the milliseconds for a date object.
+
+   ```javascript
+   const date = new Date("2023-04-17T15:30:00.000");
+   date.setMilliseconds(500);
+   console.log(date); // Output: Mon Apr 17 2023 15:30:00.500 ...
+   ```
+
+### Date Formatting
+
+1. **`toString()`**
+   Returns a string representation of the date.
+
+   ```javascript
+   const date = new Date("2023-04-17");
+   console.log(date.toString()); // Output: Mon Apr 17 2023 ...
+   ```
+
+2. **`toUTCString()`**
+   Converts a date to a string, using the UTC timezone.
+
+   ```javascript
+   const date = new Date("2023-04-17T15:30:00");
+   console.log(date.toUTCString()); // Output: Mon, 17 Apr 2023 15:30:00 GMT
+   ```
+
+3. **`toISOString()`**
+   Returns the date as a string in ISO format.
+
+   ```javascript
+   const date = new Date("2023-04-17T15:30:00");
+   console.log(date.toISOString()); // Output: 2023-04-17T15:30:00.000Z
+   ```
+
+4. **`toLocaleString()`**
+   Returns a string with a language-sensitive representation of the date.
+
+   ```javascript
+   const date = new Date("2023-04-17T15:30:00");
+   console.log(date.toLocaleString()); // Output: Depending on locale settings
+   ```
+
+### Other Useful Methods
+
+1. **`Date.now()`**
+   Returns the current timestamp in milliseconds since January 1, 1970.
+
+   ```javascript
+   console.log(Date.now()); // Output: Current timestamp in milliseconds
+   ```
+
+2. **`Date.parse()`**
+   Parses a date string and returns the number of milliseconds since January 1, 1970.
+
+   ```javascript
+   const timestamp = Date.parse("2023-04-17");
+   console.log(timestamp); // Output: Timestamp in milliseconds
+   ```
+
+3. **`Date.UTC()`**
+   Accepts the same parameters as the `Date` constructor but returns the number of milliseconds since January 1, 1970, UTC.
+
+   ```javascript
+   const utcTimestamp = Date.UTC(2023, 3, 17); // Month is 0-indexed
+   console.log(utcTimestamp); // Output: Timestamp in milliseconds
+   ```
+
+   
+
+
+
+
+
 
 
